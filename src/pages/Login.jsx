@@ -8,7 +8,7 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
-    const {user, signUp} = UserAuth()
+    const {user, logIn} = UserAuth()
     const navigate = useNavigate()
 
 
@@ -16,7 +16,7 @@ const Login = () => {
         e.preventDefault()
         setError('')
         try {
-           await signUp(email, password);
+           await logIn(email, password);
               navigate('/')
         } catch (error){
             console.log('error');
